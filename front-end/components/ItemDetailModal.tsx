@@ -22,19 +22,21 @@ interface AddOnOption {
 }
 
 const CATEGORY_PORTIONS: Record<string, PortionOption[]> = {
-  pizza: [
-    { label: "Medium (10\")", price: 0 },
-    { label: "Large (13\")", price: 350 },
-    { label: "Extra Large (16\")", price: 650 },
-  ],
-  burgers: [
-    { label: "Single Patty", price: 0 },
-    { label: "Double Patty", price: 180 },
-    { label: "Triple Stack", price: 320 },
-  ],
-  pasta: [
+  wok: [
     { label: "Standard Serving", price: 0 },
-    { label: "Family Portion", price: 250 },
+    { label: "Large Serving", price: 250 },
+  ],
+  noodles: [
+    { label: "Regular Bowl", price: 0 },
+    { label: "Large Bowl", price: 200 },
+  ],
+  rice: [
+    { label: "Regular Plate", price: 0 },
+    { label: "Large Plate", price: 180 },
+  ],
+  dimsum: [
+    { label: "6 Pieces", price: 0 },
+    { label: "12 Pieces", price: 550 },
   ],
   drinks: [
     { label: "Regular 350ml", price: 0 },
@@ -47,31 +49,35 @@ const CATEGORY_PORTIONS: Record<string, PortionOption[]> = {
 };
 
 const CATEGORY_ADDONS: Record<string, AddOnOption[]> = {
-  burgers: [
-    { id: "cheese", name: "Extra Cheddar Slice", price: 60 },
-    { id: "bacon", name: "Crispy Beef Bacon Strip", price: 90 },
-    { id: "jalapenos", name: "Spicy Jalapeños", price: 40 },
-    { id: "sauce", name: "House Secret Dip", price: 50 },
+  wok: [
+    { id: "extra_chillies", name: "Extra Chillies", price: 40 },
+    { id: "extra_rice", name: "Side of Steamed Rice", price: 150 },
+    { id: "peanuts", name: "Extra Crushed Peanuts", price: 50 },
+    { id: "sauce", name: "House Chilli Sauce", price: 50 },
   ],
-  pizza: [
-    { id: "cheese_crust", name: "Stuffed Cheese Crust", price: 180 },
-    { id: "extra_cheese", name: "Extra Mozzarella", price: 120 },
-    { id: "olives", name: "Black Olives & Mushrooms", price: 90 },
-    { id: "garlic_dip", name: "Garlic Mayo Dip", price: 50 },
-  ],
-  pasta: [
-    { id: "extra_cheese", name: "Extra Parmesan Cheese", price: 80 },
-    { id: "garlic_bread", name: "Side of Garlic Bread (2pcs)", price: 120 },
+  noodles: [
+    { id: "extra_noodles", name: "Extra Noodles", price: 150 },
+    { id: "egg", name: "Fried Egg", price: 80 },
     { id: "chicken", name: "Grilled Chicken Chunks", price: 150 },
+  ],
+  rice: [
+    { id: "egg", name: "Extra Fried Egg", price: 80 },
+    { id: "prawns", name: "Extra Shrimp", price: 180 },
+    { id: "veg", name: "Extra Vegetables", price: 100 },
+  ],
+  dimsum: [
+    { id: "sauce", name: "Soy Dipping Sauce", price: 40 },
+    { id: "chilli_oil", name: "Chilli Oil", price: 50 },
+    { id: "extra_pieces", name: "2 Extra Pieces", price: 180 },
   ],
   drinks: [
     { id: "extra_ice", name: "Extra Ice", price: 0 },
-    { id: "mint", name: "Fresh Mint Boost", price: 40 },
+    { id: "boba", name: "Tapioca Pearls (Boba)", price: 60 },
     { id: "syrup", name: "Flavored Syrup Shot", price: 50 },
   ],
   desserts: [
     { id: "ice_cream", name: "Vanilla Ice Cream Scoop", price: 100 },
-    { id: "choco_fudge", name: "Hot Fudge Drizzle", price: 60 },
+    { id: "honey", name: "Honey Drizzle", price: 50 },
     { id: "nuts", name: "Crushed Roasted Nuts", price: 50 },
   ],
 };

@@ -8,7 +8,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   name: "Fusion Wok",
-  servesCuisine: ["Burgers", "Pizza", "Pasta"],
+  servesCuisine: ["Chinese", "Wok", "Dim Sum"],
   address: { "@type": "PostalAddress", streetAddress: "123 Main Street", addressLocality: "Your City" },
   telephone: "+92 300 0000000",
   openingHours: ["Mo-Th 12:00-23:00", "Fr-Su 12:00-01:00"],

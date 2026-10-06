@@ -487,7 +487,7 @@ export default function CheckoutForm({ onSubmit, isSubmitting }: CheckoutFormPro
             <textarea
               name="specialInstructions"
               rows={2}
-              placeholder="e.g. Extra spicy, sauce on the side, no onions in the burger..."
+              placeholder="e.g. Extra spicy, sauce on the side, no onions in the wok..."
               value={formData.specialInstructions}
               onChange={(e) => handleChange("specialInstructions", e.target.value)}
               className="w-full rounded-2xl border border-neutral-200 bg-white p-3.5 text-sm transition focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20 dark:border-neutral-700 dark:bg-[#171212] dark:text-neutral-100"

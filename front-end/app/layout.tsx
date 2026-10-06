@@ -10,7 +10,7 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700
 
 export const metadata: Metadata = {
   title: "Fusion Wok | Order Online",
-  description: "Burgers, pizza, pasta and more. Fresh, fast and delivered hot. Order online from Fusion Wok.",
+  description: "Chinese wok dishes, noodles, fried rice, dim sum and more. Fresh, fast and delivered hot. Order online from Fusion Wok.",
 };
 
 // Runs before paint so the saved theme doesn't flash. Light is the default.
