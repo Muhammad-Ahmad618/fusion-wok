@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import ItemCard from "./ItemCard";
 import ItemDetailModal from "./ItemDetailModal";
 import { Category, MenuItem } from "@/types";
@@ -10,7 +11,16 @@ interface MenuProps {
 }
 
 export default function Menu({ categories, items }: MenuProps) {
-  const tabs = [{ id: "hot", name: "🔥 Hot" }, ...categories.map((c) => ({ id: c.id, name: `${c.icon} ${c.name}` }))];
+  interface Tab {
+    id: string;
+    name: string;
+    icon: string;
+    img?: string;
+  }
+  const tabs: Tab[] = [
+    { id: "hot", name: "Hot", icon: "🔥" },
+    ...categories.map((c) => ({ id: c.id, name: c.name, icon: c.icon, img: c.img })),
+  ];
   const [active, setActive] = useState<string>("hot");
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
 
@@ -42,7 +52,12 @@ export default function Menu({ categories, items }: MenuProps) {
         <div className="no-scrollbar mx-auto flex max-w-6xl gap-2.5 overflow-x-auto px-5 py-3">
           {tabs.map((t) => (
             <button key={t.id} data-tab={t.id} onClick={() => go(t.id)}
-              className={`flex-none rounded-full border-[1.5px] border-brand px-4 py-2 font-semibold ${active === t.id ? "bg-brand text-white" : "text-brand"}`}>
+              className={`flex flex-none items-center gap-1.5 rounded-full border-[1.5px] border-brand px-4 py-2 font-semibold ${active === t.id ? "bg-brand text-white" : "text-brand"}`}>
+              {t.img ? (
+                <Image src={t.img} alt="" width={20} height={20} className="h-5 w-5 flex-none rounded-full object-cover" />
+              ) : (
+                <span aria-hidden>{t.icon}</span>
+              )}
               {t.name}
             </button>
           ))}
@@ -64,7 +79,14 @@ export default function Menu({ categories, items }: MenuProps) {
         {categories.map((c) => (
           <section key={c.id} id={c.id} className="scroll-mt-[124px] pt-10">
             <div className="mb-5 flex items-center gap-2.5">
-              <h2 className="text-2xl font-bold">{c.icon} {c.name}</h2>
+              <h2 className="flex items-center gap-2.5 text-2xl font-bold">
+                {c.img ? (
+                  <Image src={c.img} alt="" width={32} height={32} className="h-8 w-8 flex-none rounded-full object-cover shadow-sm" />
+                ) : (
+                  <span aria-hidden>{c.icon}</span>
+                )}
+                {c.name}
+              </h2>
               <div className="h-0.5 flex-1 bg-red-100 dark:bg-[#3a2b2b]" />
             </div>
             <div className="grid grid-cols-[repeat(auto-fill,minmax(230px,1fr))] gap-5">

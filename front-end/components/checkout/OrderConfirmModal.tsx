@@ -116,7 +116,13 @@ export default function OrderConfirmModal({
               {items.map((item) => (
                 <div key={item.id} className="flex items-center justify-between text-xs py-1.5 border-b border-neutral-100 dark:border-[#2e2323] last:border-0">
                   <div className="flex items-center gap-2">
-                    <span className="text-lg">{item.emoji}</span>
+                    {item.img ? (
+                      <span className="relative block h-7 w-7 flex-none overflow-hidden rounded-md">
+                        <Image src={item.img} alt="" fill sizes="28px" className="object-cover" />
+                      </span>
+                    ) : (
+                      <span className="text-lg">{item.emoji}</span>
+                    )}
                     <div>
                       <p className="font-bold text-neutral-900 dark:text-neutral-100">{item.name}</p>
                       <p className="text-[11px] text-neutral-500">Qty: {item.qty} × Rs. {item.price.toLocaleString()}</p>

@@ -2,6 +2,7 @@ export interface Category {
   id: string;
   name: string;
   icon: string;
+  img?: string;
 }
 
 export interface Deal {
@@ -12,6 +13,7 @@ export interface Deal {
   href: string;
   code: string;
   emoji: string;
+  img?: string;
 }
 
 export interface MenuItem {

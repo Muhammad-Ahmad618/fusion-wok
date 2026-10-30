@@ -23,7 +23,7 @@ export default function CartEmpty() {
         href="/"
         className="inline-flex items-center gap-2.5 rounded-2xl bg-brand px-8 py-4 font-bold text-white shadow-xl shadow-brand/25 transition hover:bg-brand-dark hover:shadow-brand/40 active:scale-95"
       >
-        <span className="text-xl">🍔</span>
+        <span className="text-xl">🥡</span>
         Browse the Menu
       </Link>
     </main>

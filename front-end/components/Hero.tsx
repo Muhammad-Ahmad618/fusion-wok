@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Deal } from "@/types";
 
 interface HeroProps {
@@ -27,7 +28,21 @@ export default function Hero({ deals }: HeroProps) {
                 <a href={d.href} className="inline-block rounded-xl bg-white px-6 py-3 font-bold text-brand">{d.cta}</a>
                 <span className="ml-3 inline-block rounded-xl border-2 border-dashed border-white px-3.5 py-2 text-sm">Code: {d.code}</span>
               </div>
-              <div className="hidden text-[170px] leading-none drop-shadow-2xl sm:block">{d.emoji}</div>
+              <div className="hidden flex-none sm:block">
+                {d.img ? (
+                  <div className="relative h-52 w-52 overflow-hidden rounded-full border-[6px] border-white/80 shadow-2xl drop-shadow-2xl md:h-72 md:w-72">
+                    <Image
+                      src={d.img}
+                      alt={d.title}
+                      fill
+                      sizes="(min-width: 768px) 288px, 208px"
+                      className="object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="text-[170px] leading-none drop-shadow-2xl">{d.emoji}</div>
+                )}
+              </div>
             </div>
           </div>
         ))}
